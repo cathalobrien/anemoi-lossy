@@ -26,7 +26,9 @@ The text of this document uses ASD-STE100 (Simplified Technical English).
 
 An anemoi dataset has a `data` array with the shape
 `(dates, variables, ensembles, values)`. Usually there is one chunk for each
-date, with the shape `(1, n_variables, 1, n_values)`. The chunks are
+date, with the shape `(1, n_variables, 1, n_values)`. Some datasets divide
+each date into more chunks, for example one variable and 1/16 of the grid for
+each chunk (`(1, 1, 1, n_values / 16)`). The chunks are
 compressed with Blosc LZ4. Blosc is lossless, so it makes the data only about
 2 times smaller.
 
@@ -40,23 +42,51 @@ problem. It operates as one zarr compressor:
 
 1. It divides each chunk along the variable axis.
 2. It applies one codec chain to each variable.
-3. It writes all the variable payloads behind a small header.
+3. It writes all the variable payloads behind a small header. The header
+   also contains the chain index of each variable (`chains`).
 
 The codec configuration is in `data/.zarray`, field `compressor`:
 
 | Field | Meaning |
 |---|---|
-| `chunk_shape` | The full chunk shape of the array. |
+| `chunk_shape` | The chunk shape of the array. |
 | `codecs` | The list of unique codec chains. |
-| `index` | For each variable, the index of its chain in `codecs`. |
+| `index` | For each variable of the dataset, the index of its chain in `codecs`. |
 | `grid_shape` | Optional. The 2D shape of the values axis, for codecs that use 2D data. Use `null` for reduced Gaussian grids. |
 | `work_dtype` | Optional. The data type for encoding. |
 
 The encoded chunk has this layout:
 
 ```
-b"APV1" | u32 header length | JSON header (dtype, shape, payload lengths) | payloads
+b"APV1" | u32 header length | JSON header (dtype, shape, payload lengths, chains) | payloads
 ```
+
+#### Chunks that do not contain all variables
+
+Zarr does not give the position of a chunk to the codec. Thus, if a chunk
+contains only some variables, the codec cannot find their chains from the
+`data/.zarray` configuration. To solve this problem:
+
+- The converter knows the position of each chunk. It calls
+  `PerVariable.encode_block(chunk, first_variable)`.
+- The encoder writes the chain index of each variable of the chunk into the
+  header (`chains`).
+- The decoder reads the chains from the header. Thus zarr and
+  anemoi-datasets read these arrays with no change.
+
+**Zarr cannot write to these arrays.** `PerVariable.encode` raises an error
+if the chunks do not contain all variables. Only the converter can write
+them. The chunks keep the layout of the source, so a read of some variables
+reads only their chunks.
+
+An edge chunk can extend past the last variable of the array. The encoder
+does not store these padding variables, and the decoder fills them with
+zeros. Zarr ignores them.
+
+Chunks from version 0.1.0 do not have `chains` in the header. The decoder uses
+`index` for these chunks. A decoder of version 0.1.0 cannot read chunks that
+do not contain all variables. It stops with the error "index has N entries but
+the chunk has 1 variables".
 
 ### 1.3 Decoding in training
 
@@ -99,10 +129,10 @@ Important properties:
 The converter accepts only:
 
 - zarr v2 directory stores;
-- chunks that contain all variables and all grid points of a date;
 - C order.
 
-It rejects zarr v3 stores.
+It rejects zarr v3 stores. The chunks can have any shape. The new dataset has
+the same chunks as the source.
 
 ### 1.5 Codec chains
 
@@ -347,8 +377,18 @@ All results are from ECMWF AG (GH200 nodes, aarch64).
 | `o2560-fast-v2.yaml` (`w` corrected) | 1.95 | 2.41× | 14 | 768 |
 | `o2560-best.yaml` | 1.40 | 3.38× | 3,451 | 6,386 |
 
-- The source stores one variable for each chunk. You must rechunk it to
-  `[1, 100, 1, 1644160]` before conversion.
+- The source stores one variable and 1/16 of the grid in each chunk
+  (`[1, 1, 1, 1644160]`, 1,600 chunks for each date). The converter keeps
+  this layout (Section 1.2).
+- Conversion test with `o2560-fast-v2.yaml` and this layout (dates 0 and
+  60, with `-v`):
+  - 2.42× smaller than Blosc, 5.41× smaller than float32;
+  - `check_bounds.py`: all 100 variables `ok`, 0 NaN mismatches;
+  - encode: approximately 15 min for each date on one core (1,600 chunks);
+  - zarr 2.18 reads a full date in 16 s (Blosc source: 9 s), 1 core;
+  - zarr 3.4 reads a full date in 2.4 s (Blosc source: 1.5 s), because it
+    decodes the chunks of a date in parallel;
+  - a read of one variable reads only its 16 chunks (0.04–0.2 s).
 - Decode scales almost linearly with threads. With 16 threads, a date
   decodes in approximately 1 s. But each data loader worker decodes on one
   core today.
@@ -381,8 +421,9 @@ Most of the loss difference comes from the quantization noise in the targets
   and one validation pass. We did not calculate forecast scores.
 - **The challenge codecs are too slow for training.** At 88 s per N320 date,
   training needs hundreds of data loader workers for each GPU.
-- **Dataset layout.** The converter accepts only zarr v2 with one chunk that
-  contains all variables of a date.
+- **Dataset layout.** The converter accepts only zarr v2 directory stores.
+  If the chunks do not contain all variables, zarr cannot write to the
+  converted array (Section 1.2).
 - **Configuration and dataset.** A configuration is correct only for the
   dataset that it was made from, because the offsets come from its
   statistics.
@@ -426,3 +467,4 @@ Most of the loss difference comes from the quantization noise in the targets
 | `configs/` | Converter configurations (Section 5). |
 | `tests/make_toy_dataset.py` | Writes a small synthetic dataset in the anemoi layout. |
 | `tests/test_codec.py` | Unit tests of the codec and of the configuration patterns. |
+| `tests/test_convert.py` | End-to-end tests of the converter for different chunk layouts. |

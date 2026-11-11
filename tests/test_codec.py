@@ -47,3 +47,35 @@ def test_config_patterns():
 def test_bad_grid_shape():
     with pytest.raises(ValueError):
         get_codec({"id": "anemoi.per_variable", "chunk_shape": [1, 1, 1, 12], "codecs": [ZSTD], "index": [0], "grid_shape": [5, 5]})
+
+
+def test_encode_block_split_variables():
+    # chunks with one variable: the chain of each chunk comes from the header
+    codec = get_codec(
+        {"id": "anemoi.per_variable", "chunk_shape": [1, 1, 1, 12], "codecs": [[ZSTD], BITROUND], "index": [0, 1, 0]}
+    )
+    x = np.random.default_rng(0).normal(size=(1, 1, 1, 12)).astype(np.float32)
+    np.testing.assert_array_equal(codec.decode(codec.encode_block(x, 0)), x)  # lossless chain
+    y = codec.decode(codec.encode_block(x, 1))  # bitround chain
+    assert not np.array_equal(y, x)
+    np.testing.assert_allclose(y, x, rtol=2**-6)
+    with pytest.raises(ValueError, match="encode_block"):
+        codec.encode(x)  # zarr does not know the variable of the chunk
+    with pytest.raises(ValueError):
+        codec.encode_block(x, 3)
+
+
+def test_decode_chunk_without_chains():
+    # chunks written before the 'chains' header key was added must still decode
+    import json
+    import struct
+
+    codec = get_codec({"id": "anemoi.per_variable", "chunk_shape": [1, 2, 1, 12], "codecs": [[ZSTD]], "index": [0, 0]})
+    x = np.random.default_rng(0).normal(size=(1, 2, 1, 12)).astype(np.float32)
+    enc = codec.encode(x)
+    (hlen,) = struct.unpack("<I", enc[4:8])
+    header = json.loads(enc[8 : 8 + hlen])
+    del header["chains"]
+    h = json.dumps(header).encode()
+    old = enc[:4] + struct.pack("<I", len(h)) + h + enc[8 + hlen :]
+    np.testing.assert_array_equal(codec.decode(old), x)

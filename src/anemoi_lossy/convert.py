@@ -10,12 +10,19 @@ Works on raw chunk files, so it needs numcodecs (and the codec packages named
 in CONFIG) but not zarr. Every chunk is written to a temporary file and renamed,
 so an interrupted run can be resumed. Per-chunk sizes and (with --verify) error
 statistics go to ``DST/.lossy/stats-*.jsonl``; ``finalize`` aggregates them.
+
+The chunks of ``data`` can contain all variables and grid points of a date
+(the anemoi-datasets default), or only some variables and some grid points.
+The new dataset has the same chunks as the source. The converter gives the
+first variable of each chunk to the codec (``PerVariable.encode_block``), so
+the codec can apply the correct chain.
 """
 
 from __future__ import annotations
 
 import argparse
 import fnmatch
+import itertools
 import json
 import os
 import shutil
@@ -57,16 +64,13 @@ def _check_layout(meta: dict) -> None:
     shape, chunks = meta["shape"], meta["chunks"]
     if len(shape) != 4:
         raise SystemExit(f"expected data of shape (dates, variables, ensembles, values), got {shape}")
-    if chunks[1] != shape[1] or chunks[3] != shape[3]:
-        raise SystemExit(f"variables and values must not be split across chunks (shape {shape}, chunks {chunks})")
     if meta.get("order", "C") != "C":
         raise SystemExit("only C-order arrays are supported")
 
 
-def _n_chunks(meta: dict) -> tuple[int, int]:
-    """(date chunks, ensemble chunks)."""
-    shape, chunks = meta["shape"], meta["chunks"]
-    return -(-shape[0] // chunks[0]), -(-shape[2] // chunks[2])
+def _n_chunks(meta: dict) -> list[int]:
+    """Number of chunks along each axis (dates, variables, ensembles, values)."""
+    return [-(-s // c) for s, c in zip(meta["shape"], meta["chunks"])]
 
 
 def build_codec_config(config: dict, variables: list[str], chunk_shape: list[int]) -> dict:
@@ -172,37 +176,40 @@ def convert(src: Path, dst: Path, start: int, end: int, verify: bool, overwrite:
     dst_meta = _read_json(dst / "data" / ".zarray")
     compressor, filters = _source_codecs(src_meta)
     codec = get_codec(dst_meta["compressor"])
-    n_dates, n_ens = _n_chunks(src_meta)
+    n_dates, n_var, n_ens, n_val = _n_chunks(src_meta)
     end = min(end, n_dates)
+    shape, chunks = src_meta["shape"], src_meta["chunks"]
 
-    chunk_nbytes = int(np.prod(src_meta["chunks"])) * np.dtype(src_meta["dtype"]).itemsize
+    chunk_nbytes = int(np.prod(chunks)) * np.dtype(src_meta["dtype"]).itemsize
     log = open(dst / WORK / f"stats-{start:08d}-{end:08d}.jsonl", "w")
-    for t in range(start, end):
-        for e in range(n_ens):
-            key = _chunk_key(src_meta, (t, 0, e, 0))
-            src_file, dst_file = src / "data" / key, dst / "data" / key
-            if not src_file.exists():  # chunk never written: zarr returns fill_value
-                continue
-            if dst_file.exists() and not overwrite and not verify:  # resumed run: already done
-                rec = {"chunk": key, "raw": chunk_nbytes, "src": src_file.stat().st_size, "dst": dst_file.stat().st_size}
-                log.write(json.dumps(rec) + "\n")
-                continue
-
-            raw = src_file.read_bytes()
-            arr = _decode_source(raw, src_meta, compressor, filters)
-            if dst_file.exists() and not overwrite:
-                enc = dst_file.read_bytes()
-            else:
-                enc = codec.encode(arr)
-                dst_file.parent.mkdir(parents=True, exist_ok=True)
-                tmp = dst_file.with_name(dst_file.name + f".tmp{os.getpid()}")
-                tmp.write_bytes(enc)
-                os.replace(tmp, dst_file)
-
-            rec = {"chunk": key, "raw": arr.nbytes, "src": len(raw), "dst": len(enc)}
-            if verify:
-                rec["vars"] = _error_stats(arr, codec.decode(enc))
+    for t, v, e, g in itertools.product(range(start, end), range(n_var), range(n_ens), range(n_val)):
+        key = _chunk_key(src_meta, (t, v, e, g))
+        src_file, dst_file = src / "data" / key, dst / "data" / key
+        if not src_file.exists():  # chunk never written: zarr returns fill_value
+            continue
+        if dst_file.exists() and not overwrite and not verify:  # resumed run: already done
+            rec = {"chunk": key, "raw": chunk_nbytes, "src": src_file.stat().st_size, "dst": dst_file.stat().st_size}
             log.write(json.dumps(rec) + "\n")
+            continue
+
+        var0 = v * chunks[1]  # dataset index of the first variable of the chunk
+        raw = src_file.read_bytes()
+        arr = _decode_source(raw, src_meta, compressor, filters)
+        if dst_file.exists() and not overwrite:
+            enc = dst_file.read_bytes()
+        else:
+            enc = codec.encode_block(arr, var0)
+            dst_file.parent.mkdir(parents=True, exist_ok=True)
+            tmp = dst_file.with_name(dst_file.name + f".tmp{os.getpid()}")
+            tmp.write_bytes(enc)
+            os.replace(tmp, dst_file)
+
+        rec = {"chunk": key, "raw": arr.nbytes, "src": len(raw), "dst": len(enc), "var0": var0}
+        if verify:
+            # edge chunks extend past the array: do not use the padding in the errors
+            valid = tuple(slice(0, min(c, s - i * c)) for s, c, i in zip(shape, chunks, (t, v, e, g)))
+            rec["vars"] = _error_stats(arr[valid], codec.decode(enc)[valid])
+        log.write(json.dumps(rec) + "\n")
     log.close()
 
 
@@ -219,7 +226,8 @@ def finalize(src: Path, dst: Path) -> None:
             raw += rec["raw"]
             src_b += rec["src"]
             dst_b += rec["dst"]
-            for acc, s in zip(per_var, rec.get("vars", [])):
+            var0 = rec.get("var0", 0)
+            for acc, s in zip(per_var[var0:], rec.get("vars", [])):
                 verified = True
                 acc["n"] += s["n"]
                 acc["sum_sq"] += s["sum_sq"]
