@@ -1,0 +1,17 @@
+Variable,Requirement (0.1.0b1),Best ratio (our submission),W1 Quantize+Context ratio,W2 Quantize+Interp ratio,W3 Log-relative ratio,W4 SPERR ratio,Best config (our submission),W1 parameters,W2 parameters,W3 parameters,W4 parameters
+cc,"PwRel(0.01) && Limits(minimum=0.0, maximum=1.0)",70.83,66.07,21.89,63.02,23.1,Mask(zero) + ebq-residuals+zeromask + Zstd-22,"eb=1.953125e-05 (residuals), zero-mask","eb=1.953125e-05, zero-mask",ratio=1+0.01 (ebq core),log+pwe=0.01
+ciwc,PwRel(0.01) && Limits(minimum=0.0),82.04,74.2,22.72,82.03,28.42,ctx-rel,"eb=1.1641532182693482e-12 (residuals), zero-mask","eb=1.1641532182693482e-12, zero-mask",ratio=1+0.01 (ebq core),log+pwe=0.01
+clwc,PwRel(0.01) && Limits(minimum=0.0),60.42,55.91,26.08,60.42,28.95,ctx-rel,"eb=2.384185791015625e-09 (residuals), zero-mask","eb=2.384185791015625e-09, zero-mask",ratio=1+0.01 (ebq core),log+pwe=0.01
+crwc,PwRel(0.01) && Limits(minimum=0.0),73.1,68.43,28.68,73.1,30.34,pwratio-ebq-residuals + Zstd-22,"eb=1.4901161193847657e-10 (residuals), zero-mask","eb=1.4901161193847657e-10, zero-mask",ratio=1+0.01 (ebq core),log+pwe=0.01
+cswc,PwRel(0.01) && Limits(minimum=0.0),81.16,60.2,25.28,81.16,35.84,ctx-rel,"eb=1.4901161193847657e-10 (residuals), zero-mask","eb=1.4901161193847657e-10, zero-mask",ratio=1+0.01 (ebq core),log+pwe=0.01
+d,PwRel(0.05),16.08,6.75,4.29,15.32,10.86,"ctx-rel [bitmap signs, pw-ratio#1 pack_signs]",eb=9.313225746154786e-11 (residuals),eb=9.313225746154786e-11,ratio=1+0.05 (ebq core),log+pwe=0.05
+o3,PwRel(0.01),121.63,20.77,21.85,121.62,86.56,pwratio-interp,eb=8.036053600335435e-11 (residuals),eb=8.036053600335435e-11,ratio=1+0.01 (interp core),log+pwe=0.01
+pv,(PwAbs(1e-07) and PwRel(0.1)),9.9,9.3,4.57,9.9,7.65,pwratio-ebq-residuals,eb=7.91791873916087e-12 (residuals),eb=3.4753071129049425e-12,ratio=1+0.0005177136947352334 (ebq core),log+pwe=0.000576885213257617
+q,PwRel(0.01),52.29,8.34,4.43,52.29,38.58,pwratio-interp,eb=1.0120089655174525e-10 (residuals),eb=1.0120089655174525e-10,ratio=1+0.01 (interp core),log+pwe=0.01
+r,PwRel(0.01),48.03,7.15,3.84,48.03,35.83,pwratio-interp,eb=2.6100873947143554e-06 (residuals),eb=2.6100873947143554e-06,ratio=1+0.01 (interp core),log+pwe=0.01
+t,(PwAbs(0.01) and PwRangeRel(0.01)),28.34,24.05,28.34,26.24,21.79,interp-abs,eb=0.009897483568247559 (residuals),eb=0.009897483568247559,ratio=1+3.1064152955308405e-05 (interp core),pwe=0.009579872613059195
+u,PwAbs(0.001),10.84,10.06,10.84,6.06,9.67,interp-abs,eb=0.001 (residuals),eb=0.001,ratio=1+1.5437532595345655e-05 (interp core),pwe=0.001
+v,PwAbs(0.001),10.92,10.09,10.92,5.6,9.88,interp-abs,eb=0.001 (residuals),eb=0.001,ratio=1+1.760171290106503e-05 (interp core),pwe=0.001
+vo,PwRel(0.05),20.18,7.35,4.4,19.24,13.66,"ctx-rel [bitmap signs, pw-ratio#1 pack_signs]",eb=4.656612873077393e-11 (residuals),eb=4.656612873077393e-11,ratio=1+0.05 (ebq core),log+pwe=0.05
+w,(PwAbs(0.01) and PwRel(0.05)),8.14,8.14,4.57,6.72,5.87,ebq-residuals + Zstd-22,eb=4.76837158203125e-08 (residuals),eb=4.76837158203125e-08,ratio=1+0.000732523813938224 (ebq core),log+pwe=0.000929068058595876
+z,(MeanAbs(5.0) and PwAbs(10.0)),204.96,75.94,204.93,29.76,131.93,interp-abs,eb=9.576032806985737 (residuals),eb=10.0,ratio=1+4.806734716010603e-05 (interp core),pwe=10.0

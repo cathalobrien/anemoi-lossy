@@ -1,0 +1,1856 @@
+grid_shape: null
+work_dtype: null
+default:
+  id: blosc
+  cname: lz4
+  clevel: 5
+  shuffle: 1
+  blocksize: 0
+variables:
+  10u:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -62.99919128417969
+    scale: 501.9146524522869
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  10v:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -67.88070678710938
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  2d:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 187.44435119628906
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  2t:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 189.89117431640625
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  cos_julian_day:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  cos_latitude:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  cos_local_time:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  cos_longitude:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  cos_solar_zenith_angle:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  cp:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 0.0
+    scale: 50074.6169939547
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  lsm:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  msl:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 92418.0625
+    scale: 0.5039370078740157
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  q_100:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_1000:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_150:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_200:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_250:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_300:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_400:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_50:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_500:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_600:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_700:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_850:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  q_925:
+  - id: bitround
+    keepbits: 6
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 1
+    blocksize: 0
+  sdor:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  sin_julian_day:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  sin_latitude:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  sin_local_time:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  sin_longitude:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  skt:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 188.5064239501953
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  slor:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  t_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 176.2271270751953
+    scale: 50.076410538541474
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 224.25721740722656
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 178.1579132080078
+    scale: 50.076410538541474
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 188.3195343017578
+    scale: 50.076410538541474
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 192.74478149414062
+    scale: 50.076410538541474
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 199.92196655273438
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 211.45761108398438
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 173.20738220214844
+    scale: 50.076410538541474
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 218.7517852783203
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 195.02578735351562
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 203.5509490966797
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 217.43643188476562
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  t_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 220.9571990966797
+    scale: 50.153054977347864
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  tcw:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 0.0465855747461319
+    scale: 5.000763055886213
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  tp:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 0.0
+    scale: 50299.81023211547
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -58.873077392578125
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -63.05406188964844
+    scale: 501.9146524522869
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -55.06272888183594
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -56.07255554199219
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -61.43389892578125
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -62.16178894042969
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -68.61247253417969
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -29.584732055664062
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -76.67942810058594
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -77.10604858398438
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -77.18470764160156
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -70.99070739746094
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  u_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -78.86790466308594
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -52.82023620605469
+    scale: 501.9146524522869
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -67.48843383789062
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -55.8125
+    scale: 501.9146524522869
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -77.76875305175781
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -83.53195190429688
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -79.39891052246094
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -69.22297668457031
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -57.55030822753906
+    scale: 501.9146524522869
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -57.60711669921875
+    scale: 501.9146524522869
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -59.92988586425781
+    scale: 501.9146524522869
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -62.918426513671875
+    scale: 501.9146524522869
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -69.75944519042969
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  v_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -81.31390380859375
+    scale: 503.8440248477766
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -17.930419921875
+    scale: 50.009538562500474
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -17.467971801757812
+    scale: 50.019080765062355
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -45.87080383300781
+    scale: 50.019080765062355
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -69.31431579589844
+    scale: 50.03817609870812
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -90.56089782714844
+    scale: 50.03817609870812
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -107.99739074707031
+    scale: 50.03817609870812
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -131.36277770996094
+    scale: 50.076410538541474
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -5.322175025939941
+    scale: 50.002384299483275
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -129.04617309570312
+    scale: 50.076410538541474
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -118.19459533691406
+    scale: 50.03817609870812
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -105.56187438964844
+    scale: 50.03817609870812
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -91.32989501953125
+    scale: 50.03817609870812
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  w_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -44.635284423828125
+    scale: 50.019080765062355
+    dtype: <f8
+    astype: <i4
+  - id: delta
+    dtype: <i4
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z:
+    id: blosc
+    cname: lz4
+    clevel: 5
+    shuffle: 1
+    blocksize: 0
+  z_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 139885.8125
+    scale: 0.10031347962382445
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: -6642.09765625
+    scale: 0.10000976657876746
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 117463.625
+    scale: 0.10031347962382445
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 101013.75
+    scale: 0.10015649452269171
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 87953.0
+    scale: 0.10015649452269171
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 77062.0
+    scale: 0.10015649452269171
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 59361.4375
+    scale: 0.10015649452269171
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 176882.375
+    scale: 0.10031347962382445
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 45204.58984375
+    scale: 0.10007818608287725
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 32662.73828125
+    scale: 0.10007818608287725
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 21620.015625
+    scale: 0.10003907776475186
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 7006.18359375
+    scale: 0.10003907776475186
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+  z_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: fixedscaleoffset
+    offset: 0.10230898857116699
+    scale: 0.10001953506544246
+    dtype: <f8
+    astype: <i2
+  - id: delta
+    dtype: <i2
+  - id: blosc
+    cname: zstd
+    clevel: 9
+    shuffle: 2
+    blocksize: 0
+bounds:
+  10u:
+    kind: abs
+    eb: 0.001
+    requirement: single 10u
+    workflow: fast quantize <i4
+  10v:
+    kind: abs
+    eb: 0.001
+    requirement: single 10v
+    workflow: fast quantize <i4
+  2d:
+    kind: abs
+    eb: 0.01
+    requirement: single 2d
+    workflow: fast quantize <i4
+  2t:
+    kind: abs
+    eb: 0.01
+    requirement: single 2t
+    workflow: fast quantize <i4
+  cos_julian_day:
+    kind: lossless
+    reason: forcing
+  cos_latitude:
+    kind: lossless
+    reason: constant
+  cos_local_time:
+    kind: lossless
+    reason: forcing
+  cos_longitude:
+    kind: lossless
+    reason: constant
+  cos_solar_zenith_angle:
+    kind: lossless
+    reason: forcing
+  cp:
+    kind: abs
+    eb: 1.0e-05
+    requirement: single cp
+    workflow: fast quantize <i4
+  lsm:
+    kind: lossless
+    reason: constant
+  msl:
+    kind: abs
+    eb: 1.0
+    requirement: single msl
+    workflow: fast quantize <i4
+  q_100:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_1000:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_150:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_200:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_250:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_300:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_400:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_50:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_500:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_600:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_700:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_850:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  q_925:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: fast bitround 6
+  sdor:
+    kind: lossless
+    reason: constant
+  sin_julian_day:
+    kind: lossless
+    reason: forcing
+  sin_latitude:
+    kind: lossless
+    reason: constant
+  sin_local_time:
+    kind: lossless
+    reason: forcing
+  sin_longitude:
+    kind: lossless
+    reason: constant
+  skt:
+    kind: abs
+    eb: 0.01
+    requirement: single skt
+    workflow: fast quantize <i4
+  slor:
+    kind: lossless
+    reason: constant
+  t_100:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i2
+  t_1000:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i4
+  t_150:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i2
+  t_200:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i2
+  t_250:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i2
+  t_300:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i2
+  t_400:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i2
+  t_50:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i2
+  t_500:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i2
+  t_600:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i4
+  t_700:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i4
+  t_850:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i4
+  t_925:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: fast quantize <i4
+  tcw:
+    kind: abs
+    eb: 0.1
+    requirement: single tcw
+    workflow: fast quantize <i2
+  tp:
+    kind: abs
+    eb: 1.0e-05
+    requirement: single tp
+    workflow: fast quantize <i4
+  u_100:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_1000:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_150:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_200:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_250:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_300:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_400:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_50:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_500:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_600:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_700:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_850:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  u_925:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: fast quantize <i4
+  v_100:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_1000:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_150:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_200:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_250:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_300:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_400:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_50:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_500:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_600:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_700:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_850:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  v_925:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: fast quantize <i4
+  w_100:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i2
+  w_1000:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i2
+  w_150:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i2
+  w_200:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i4
+  w_250:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i4
+  w_300:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i4
+  w_400:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i4
+  w_50:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i2
+  w_500:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i4
+  w_600:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i4
+  w_700:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i4
+  w_850:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i4
+  w_925:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: fast quantize <i4
+  z:
+    kind: lossless
+    reason: constant
+  z_100:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_1000:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_150:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_200:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_250:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_300:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_400:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_50:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_500:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_600:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_700:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_850:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+  z_925:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: fast quantize <i2
+generated_by:
+  script: make_challenge_config.py
+  workflow: fast
+  scale: 1.0
+  zstd_level: 19
+  work_dtype: float64

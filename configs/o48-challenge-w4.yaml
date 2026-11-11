@@ -1,0 +1,438 @@
+grid_shape: null
+work_dtype: null
+default:
+  id: zstd.rs
+  level: 19
+variables:
+  10u:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.000996185302734375
+  - id: zstd.rs
+    level: 19
+  10v:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.000996185302734375
+  - id: zstd.rs
+    level: 19
+  2d:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  2t:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  cos_julian_day:
+    id: zstd.rs
+    level: 19
+  cos_latitude:
+    id: zstd.rs
+    level: 19
+  cos_local_time:
+    id: zstd.rs
+    level: 19
+  cos_longitude:
+    id: zstd.rs
+    level: 19
+  cp:
+  - id: mask.meta
+    mask: 0.0
+    bitmap_codec:
+      id: context_mixing.bitmap
+    codec:
+      id: combinators.stack
+      codecs:
+      - id: clip
+        minimum: 0.0
+        maximum: null
+      - id: sperr.rs
+        mode: pwe
+        pwe: 9.992549419403077e-06
+  - id: zstd.rs
+    level: 19
+  insolation:
+    id: zstd.rs
+    level: 19
+  lsm:
+    id: zstd.rs
+    level: 19
+  msl:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.9921875
+  - id: zstd.rs
+    level: 19
+  q_1000:
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: sperr.rs
+      mode: pwe
+      pwe: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_250:
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: sperr.rs
+      mode: pwe
+      pwe: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_500:
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: sperr.rs
+      mode: pwe
+      pwe: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_850:
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: sperr.rs
+      mode: pwe
+      pwe: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  sdor:
+    id: zstd.rs
+    level: 19
+  sin_julian_day:
+    id: zstd.rs
+    level: 19
+  sin_latitude:
+    id: zstd.rs
+    level: 19
+  sin_local_time:
+    id: zstd.rs
+    level: 19
+  sin_longitude:
+    id: zstd.rs
+    level: 19
+  skt:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  slor:
+    id: zstd.rs
+    level: 19
+  sp:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.9921875
+  - id: zstd.rs
+    level: 19
+  t_1000:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  t_250:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.0099847412109375
+  - id: zstd.rs
+    level: 19
+  t_500:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  t_850:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  tcw:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.09999237060546876
+  - id: zstd.rs
+    level: 19
+  tp:
+  - id: mask.meta
+    mask: 0.0
+    bitmap_codec:
+      id: context_mixing.bitmap
+    codec:
+      id: combinators.stack
+      codecs:
+      - id: clip
+        minimum: 0.0
+        maximum: null
+      - id: sperr.rs
+        mode: pwe
+        pwe: 9.985098838806153e-06
+  - id: zstd.rs
+    level: 19
+  u_1000:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.0009980926513671875
+  - id: zstd.rs
+    level: 19
+  u_250:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_500:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_850:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.000996185302734375
+  - id: zstd.rs
+    level: 19
+  v_1000:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.000996185302734375
+  - id: zstd.rs
+    level: 19
+  v_250:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_500:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_850:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.000996185302734375
+  - id: zstd.rs
+    level: 19
+  z:
+    id: zstd.rs
+    level: 19
+  z_1000:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 4.99951171875
+  - id: zstd.rs
+    level: 19
+  z_250:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 4.9921875
+  - id: zstd.rs
+    level: 19
+  z_500:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 4.99609375
+  - id: zstd.rs
+    level: 19
+  z_850:
+  - id: sperr.rs
+    mode: pwe
+    pwe: 4.998046875
+  - id: zstd.rs
+    level: 19
+bounds:
+  10u:
+    kind: abs
+    eb: 0.001
+    requirement: single 10u
+  10v:
+    kind: abs
+    eb: 0.001
+    requirement: single 10v
+  2d:
+    kind: abs
+    eb: 0.01
+    requirement: single 2d
+  2t:
+    kind: abs
+    eb: 0.01
+    requirement: single 2t
+  cos_julian_day:
+    kind: lossless
+    reason: forcing
+  cos_latitude:
+    kind: lossless
+    reason: constant
+  cos_local_time:
+    kind: lossless
+    reason: forcing
+  cos_longitude:
+    kind: lossless
+    reason: constant
+  cp:
+    kind: abs
+    eb: 1.0e-05
+    requirement: single cp
+  insolation:
+    kind: lossless
+    reason: forcing
+  lsm:
+    kind: lossless
+    reason: constant
+  msl:
+    kind: abs
+    eb: 1.0
+    requirement: single msl
+  q_1000:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+  q_250:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+  q_500:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+  q_850:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+  sdor:
+    kind: lossless
+    reason: constant
+  sin_julian_day:
+    kind: lossless
+    reason: forcing
+  sin_latitude:
+    kind: lossless
+    reason: constant
+  sin_local_time:
+    kind: lossless
+    reason: forcing
+  sin_longitude:
+    kind: lossless
+    reason: constant
+  skt:
+    kind: abs
+    eb: 0.01
+    requirement: single skt
+  slor:
+    kind: lossless
+    reason: constant
+  sp:
+    kind: abs
+    eb: 1.0
+    requirement: single sp
+  t_1000:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+  t_250:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+  t_500:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+  t_850:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+  tcw:
+    kind: abs
+    eb: 0.1
+    requirement: single tcw
+  tp:
+    kind: abs
+    eb: 1.0e-05
+    requirement: single tp
+  u_1000:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+  u_250:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+  u_500:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+  u_850:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+  v_1000:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+  v_250:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+  v_500:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+  v_850:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+  z:
+    kind: lossless
+    reason: constant
+  z_1000:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+  z_250:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+  z_500:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+  z_850:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+generated_by:
+  script: make_challenge_config.py
+  workflow: W4
+  scale: 1.0
+  zstd_level: 19

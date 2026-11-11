@@ -1,0 +1,1385 @@
+grid_shape: null
+work_dtype: null
+default:
+  id: zstd.rs
+  level: 19
+variables:
+  10u:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.000996185302734375
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  10v:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.0009847412109375
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  2d:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009969482421875
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  2t:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  cos_julian_day:
+    id: zstd.rs
+    level: 19
+  cos_latitude:
+    id: zstd.rs
+    level: 19
+  cos_local_time:
+    id: zstd.rs
+    level: 19
+  cos_longitude:
+    id: zstd.rs
+    level: 19
+  cp:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: mask.meta
+    mask: 0.0
+    bitmap_codec:
+      id: context_mixing.bitmap
+    codec:
+      id: combinators.stack
+      codecs:
+      - id: clip
+        minimum: 0.0
+        maximum: null
+      - id: eb_quantize
+        eb: 9.992549419403077e-06
+        codec:
+          id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  insolation:
+    id: zstd.rs
+    level: 19
+  lsm:
+    id: zstd.rs
+    level: 19
+  msl:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.9921875
+  - id: zstd.rs
+    level: 19
+  q_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  q_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: pw_ratio
+    eb_ratio: 1.01
+    eb_abs_marker: $eb_abs
+    log_codec:
+      id: interp_ctx
+      eb: $eb_abs
+    sign_codec:
+      id: zstd.rs
+      level: 19
+  - id: zstd.rs
+    level: 19
+  sdor:
+    id: zstd.rs
+    level: 19
+  sin_julian_day:
+    id: zstd.rs
+    level: 19
+  sin_latitude:
+    id: zstd.rs
+    level: 19
+  sin_local_time:
+    id: zstd.rs
+    level: 19
+  sin_longitude:
+    id: zstd.rs
+    level: 19
+  skt:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009969482421875
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  slor:
+    id: zstd.rs
+    level: 19
+  sp:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.9921875
+  - id: zstd.rs
+    level: 19
+  t_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.0099847412109375
+  - id: zstd.rs
+    level: 19
+  t_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  t_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.0099847412109375
+  - id: zstd.rs
+    level: 19
+  t_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.0099847412109375
+  - id: zstd.rs
+    level: 19
+  t_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.0099847412109375
+  - id: zstd.rs
+    level: 19
+  t_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  t_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  t_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  t_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  t_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  t_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  t_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  t_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.009969482421875
+  - id: zstd.rs
+    level: 19
+  tcw:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: sperr.rs
+    mode: pwe
+    pwe: 0.0999847412109375
+  - id: zstd.rs
+    level: 19
+  tp:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: mask.meta
+    mask: 0.0
+    bitmap_codec:
+      id: context_mixing.bitmap
+    codec:
+      id: combinators.stack
+      codecs:
+      - id: clip
+        minimum: 0.0
+        maximum: null
+      - id: eb_quantize
+        eb: 9.94039535522461e-06
+        codec:
+          id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  u_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.000996185302734375
+  - id: zstd.rs
+    level: 19
+  u_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  u_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.0009847412109375
+  - id: zstd.rs
+    level: 19
+  v_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.00099237060546875
+  - id: zstd.rs
+    level: 19
+  v_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 0.0009847412109375
+  - id: zstd.rs
+    level: 19
+  w_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009999046325683594
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.00999237060546875
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009998092651367188
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009998092651367188
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009998092651367188
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009996185302734375
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009996185302734375
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009999761581420899
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009996185302734375
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009996185302734375
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009998092651367188
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009998092651367188
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  w_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: eb_quantize
+    eb: 0.009996185302734375
+    codec:
+      id: context_mixing.residuals
+  - id: zstd.rs
+    level: 19
+  z:
+    id: zstd.rs
+    level: 19
+  z_100:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.984375
+  - id: zstd.rs
+    level: 19
+  z_1000:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.99951171875
+  - id: zstd.rs
+    level: 19
+  z_150:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.984375
+  - id: zstd.rs
+    level: 19
+  z_200:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.9921875
+  - id: zstd.rs
+    level: 19
+  z_250:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.9921875
+  - id: zstd.rs
+    level: 19
+  z_300:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.9921875
+  - id: zstd.rs
+    level: 19
+  z_400:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.9921875
+  - id: zstd.rs
+    level: 19
+  z_50:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.984375
+  - id: zstd.rs
+    level: 19
+  z_500:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.99609375
+  - id: zstd.rs
+    level: 19
+  z_600:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.99609375
+  - id: zstd.rs
+    level: 19
+  z_700:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.99609375
+  - id: zstd.rs
+    level: 19
+  z_850:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.998046875
+  - id: zstd.rs
+    level: 19
+  z_925:
+  - id: astype
+    encode_dtype: <f8
+    decode_dtype: <f4
+  - id: interp_ctx
+    eb: 4.9990234375
+  - id: zstd.rs
+    level: 19
+bounds:
+  10u:
+    kind: abs
+    eb: 0.001
+    requirement: single 10u
+    workflow: W1
+  10v:
+    kind: abs
+    eb: 0.001
+    requirement: single 10v
+    workflow: W1
+  2d:
+    kind: abs
+    eb: 0.01
+    requirement: single 2d
+    workflow: W1
+  2t:
+    kind: abs
+    eb: 0.01
+    requirement: single 2t
+    workflow: W2
+  cos_julian_day:
+    kind: lossless
+    reason: forcing
+  cos_latitude:
+    kind: lossless
+    reason: constant
+  cos_local_time:
+    kind: lossless
+    reason: forcing
+  cos_longitude:
+    kind: lossless
+    reason: constant
+  cp:
+    kind: abs
+    eb: 1.0e-05
+    requirement: single cp
+    workflow: W1
+  insolation:
+    kind: lossless
+    reason: forcing
+  lsm:
+    kind: lossless
+    reason: constant
+  msl:
+    kind: abs
+    eb: 1.0
+    requirement: single msl
+    workflow: W2
+  q_100:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_1000:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_150:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_200:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_250:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_300:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_400:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_50:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_500:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_600:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_700:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_850:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  q_925:
+    kind: rel
+    eb: 0.01
+    requirement: pressure q
+    workflow: W3 (interp core)
+  sdor:
+    kind: lossless
+    reason: constant
+  sin_julian_day:
+    kind: lossless
+    reason: forcing
+  sin_latitude:
+    kind: lossless
+    reason: constant
+  sin_local_time:
+    kind: lossless
+    reason: forcing
+  sin_longitude:
+    kind: lossless
+    reason: constant
+  skt:
+    kind: abs
+    eb: 0.01
+    requirement: single skt
+    workflow: W1
+  slor:
+    kind: lossless
+    reason: constant
+  sp:
+    kind: abs
+    eb: 1.0
+    requirement: single sp
+    workflow: W2
+  t_100:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_1000:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_150:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_200:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_250:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_300:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_400:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_50:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_500:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_600:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_700:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_850:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  t_925:
+    kind: abs
+    eb: 0.01
+    requirement: pressure t
+    workflow: W2
+  tcw:
+    kind: abs
+    eb: 0.1
+    requirement: single tcw
+    workflow: W4
+  tp:
+    kind: abs
+    eb: 1.0e-05
+    requirement: single tp
+    workflow: W1
+  u_100:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_1000:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_150:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_200:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_250:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_300:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_400:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_50:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_500:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_600:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_700:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_850:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  u_925:
+    kind: abs
+    eb: 0.001
+    requirement: pressure u
+    workflow: W2
+  v_100:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_1000:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_150:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_200:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_250:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_300:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_400:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_50:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_500:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_600:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_700:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_850:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  v_925:
+    kind: abs
+    eb: 0.001
+    requirement: pressure v
+    workflow: W2
+  w_100:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_1000:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_150:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_200:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_250:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_300:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_400:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_50:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_500:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_600:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_700:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_850:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  w_925:
+    kind: abs
+    eb: 0.01
+    requirement: pressure w
+    workflow: W1
+  z:
+    kind: lossless
+    reason: constant
+  z_100:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_1000:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_150:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_200:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_250:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_300:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_400:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_50:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_500:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_600:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_700:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_850:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+  z_925:
+    kind: abs
+    eb: 5.0
+    requirement: pressure z
+    workflow: W2
+generated_by:
+  script: make_challenge_config.py
+  workflow: best
+  scale: 1.0
+  zstd_level: 19
+  work_dtype: float64

@@ -1,0 +1,29 @@
+# Baseline using only codecs shipped with numcodecs: keep N mantissa bits
+# (float32 has 23), then zstd. Useful to exercise the pipeline before the
+# compression-challenge codecs are installed.
+#
+# Each entry is one codec or a list applied in order (decoded in reverse).
+# Variable keys are fnmatch patterns matched against the dataset's variable
+# names, first match wins; everything else uses 'default'.
+
+grid_shape: null      # e.g. [721, 1440] for a 0.25 deg regular lat-lon grid
+work_dtype: null      # e.g. float64 if a codec requires it
+
+default:
+  - {id: bitround, keepbits: 10}
+  - {id: zstd, level: 3}
+
+variables:
+  # forcings / constants: keep lossless
+  "lsm": {id: zstd, level: 3}
+  "z": {id: zstd, level: 3}
+  "sdor": {id: zstd, level: 3}
+  "slor": {id: zstd, level: 3}
+  "*_of_*": {id: zstd, level: 3}
+  "cos_*": {id: zstd, level: 3}
+  "sin_*": {id: zstd, level: 3}
+  "insolation": {id: zstd, level: 3}
+  # geopotential on pressure levels is smooth: fewer bits are enough
+  "z_*":
+    - {id: bitround, keepbits: 8}
+    - {id: zstd, level: 3}
